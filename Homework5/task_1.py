@@ -14,10 +14,10 @@ def letter_stat(our_str):
     :type our_str: на вход подается строка
     """
     # Здесь нужно написать код
+    string_set = set(our_str)
     letters_dict = {}
-    for x in our_str:
+    for x in string_set:
         letters_dict[x] = our_str.count(x)
-
     return letters_dict
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

@@ -11,6 +11,7 @@ def repeats(our_str):
     Функция смотрит, сколько раз каждый символ уже встречался,
     и добавляет количество к символам с помощью постфикса формата _n.
     :param our_str: на вход подается строка
+
     :return: new_str Возвращается новая строка
     """
     # Здесь нужно написать код
@@ -19,13 +20,10 @@ def repeats(our_str):
     for x in our_str:
         if x in dictionary:
             variable = dictionary.get(x)
-            variable += 1
-            dictionary[x] = variable  # добавляем +1, если символ ранее уже был
-            new_str = new_str + x + "_" + str(dictionary[x])  # добавляем к
+            dictionary[x] = variable + 1  # добавляем +1, если символ ранее уже был
         else:
             dictionary[x] = 1
-            new_str = new_str + x + "_" + str(dictionary[x])
-
+        new_str = new_str + x + "_" + str(dictionary[x])
     return new_str
 
 
