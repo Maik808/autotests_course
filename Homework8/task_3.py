@@ -13,10 +13,13 @@ def segment(cor1, cor2):
     Функция возвращает сумму координат и отлавливает исключения Exception
 
     """
+    x1, y1 = cor1
+    x2, y2 = cor2
     try:
-        return cor1[0]+cor1[1]+cor2[0]+cor2[1]
+        return x1 + x2 + y1 + y2
     except Exception as e:
         return str(e)[::-1]
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
@@ -33,7 +36,6 @@ test_data = [
     8,
     "'rts' dna 'tni' :+ rof )s(epyt dnarepo detroppusnu",
     'rts ot )"tni" ton( rts etanetacnoc ylno nac']
-
 
 for i, d in enumerate(data):
     assert segment(*d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'

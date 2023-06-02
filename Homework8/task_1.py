@@ -21,18 +21,14 @@ import unittest  # Не удалять
 def treatment_sum(our_tuple):
     """
     Функция складывает и возвращает данные, корректно обрабатывая исключения
-
     """
+    if len(our_tuple) > 2:
+        raise Exception('Много данных')
     try:
-        if len(our_tuple) == 2:
-            return our_tuple[0] + our_tuple[1]
-        elif len(our_tuple) < 2:
-            raise NameError
-        else:
-            raise Exception('Много данных')
+        return our_tuple[0] + our_tuple[1]
     except TypeError:
         return 'Нельзя сложить эти данные'
-    except NameError:
+    except IndexError:
         return 'Недостаточно данных'
 
 
